@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-syne: "Syne", sans-serif;
+  
+  --color-gold: #D4AF37;
+  --color-gold-hover: #F5D061;
+  --color-luxury-black: #0B0B0B;
+  --color-luxury-dark: #101010;
+  --color-luxury-gray: #171717;
+  --color-luxury-text: #F5F5F5;
+  --color-luxury-muted: #8E8E93;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom premium styles */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-syne-luxury {
+  font-family: var(--font-syne);
+}
+
+/* Luxury Glassmorphism */
+.glass-panel {
+  background: rgba(16, 16, 16, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.glass-panel-heavy {
+  background: rgba(11, 11, 11, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-card {
+  background: rgba(23, 23, 23, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+/* Gold Glow / Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F5F5F5 30%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-pure-gradient {
+  background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #AA8417 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D061 50%, #AA8417 100%);
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+/* Custom Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations */
+@keyframes pulse-gold {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 4s infinite ease-in-out;
+}
+
+/* Smooth Image Reveal Styles */
+.reveal-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.reveal-image {
+  transform: scale(1.1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-wrapper:hover .reveal-image {
+  transform: scale(1);
+}
