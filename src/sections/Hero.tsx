@@ -28,7 +28,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[4000ms]"
           style={{
-            backgroundImage: `url('assets/hero.jpeg')`,
+            backgroundImage: `url('https://images.pexels.com/photos/8143671/pexels-photo-8143671.jpeg')`,
             transform: `translate(${mousePosition.x * -0.2}px, ${mousePosition.y * -0.2}px) scale(1.08)`,
           }}
         />
